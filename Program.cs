@@ -2,7 +2,7 @@
 
 public static class Program
 {
-    /*private static readonly Parc Parc = new();
+    private static readonly Parc Parc = new();
     private static readonly Map Map = new();
     private static readonly GestionVisiteurs GestionVisiteurs = new(Parc);
     private static void Afficher()
@@ -20,10 +20,10 @@ public static class Program
     {
         GestionVisiteurs.SortirVisiteurDuParc(visiteur);
         Afficher();
-    }*/
+    }
 
     public static void Main()
-    {/*
+    {
         AffichageConsole.Afficher(Parc, Map, GestionVisiteurs);
 
         var visiteur1 = new Visiteur("Nom 1");
@@ -45,7 +45,7 @@ public static class Program
         TestSortirVisiteur(visiteur4);
         TestSortirVisiteur(visiteur2);
         TestSortirVisiteur(visiteur1);
-        AffichageConsole.AfficherHistoriqueVisiteur(visiteur1);*/
+        AffichageConsole.AfficherHistoriqueVisiteur(visiteur1);
         Parc parc = new Parc();
         parc.RecupererAttraction("T0002");
     }

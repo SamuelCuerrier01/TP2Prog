@@ -24,4 +24,9 @@ public class Attraction
     {
         return _nom;
     }
+
+    public int GetCapacite()
+    {
+        return _capacite;
+    }
 }
