@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\samue\\OneDrive - CEGEP SAINT-JEAN-SUR-RICHELIEU\\Bureau\\école\\3-SESSION\\Structure de Données\\TP2Prog\\TP2Prog\\TP2Prog.csproj": {}
+    "C:\\Users\\samue\\RiderProjects\\TP2Prog\\TP2Prog.csproj": {}
   },
   "projects": {
-    "C:\\Users\\samue\\OneDrive - CEGEP SAINT-JEAN-SUR-RICHELIEU\\Bureau\\école\\3-SESSION\\Structure de Données\\TP2Prog\\TP2Prog\\TP2Prog.csproj": {
+    "C:\\Users\\samue\\RiderProjects\\TP2Prog\\TP2Prog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\samue\\OneDrive - CEGEP SAINT-JEAN-SUR-RICHELIEU\\Bureau\\école\\3-SESSION\\Structure de Données\\TP2Prog\\TP2Prog\\TP2Prog.csproj",
+        "projectUniqueName": "C:\\Users\\samue\\RiderProjects\\TP2Prog\\TP2Prog.csproj",
         "projectName": "TP2Prog",
-        "projectPath": "C:\\Users\\samue\\OneDrive - CEGEP SAINT-JEAN-SUR-RICHELIEU\\Bureau\\école\\3-SESSION\\Structure de Données\\TP2Prog\\TP2Prog\\TP2Prog.csproj",
+        "projectPath": "C:\\Users\\samue\\RiderProjects\\TP2Prog\\TP2Prog.csproj",
         "packagesPath": "C:\\Users\\samue\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\samue\\OneDrive - CEGEP SAINT-JEAN-SUR-RICHELIEU\\Bureau\\école\\3-SESSION\\Structure de Données\\TP2Prog\\TP2Prog\\obj\\",
+        "outputPath": "C:\\Users\\samue\\RiderProjects\\TP2Prog\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

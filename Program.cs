@@ -3,12 +3,12 @@
 public static class Program
 {
     private static readonly Parc Parc = new();
-    private static readonly Map Map = new();
+    private static readonly Map Map = new(Parc);
     private static readonly GestionVisiteurs GestionVisiteurs = new(Parc);
     private static void Afficher()
     {
         Thread.Sleep(1000);
-        AffichageConsole.Afficher(Parc, Map, GestionVisiteurs);
+        //AffichageConsole.Afficher(Parc, Map, GestionVisiteurs);
     }
     private static void TestEntrerVisiteur(Visiteur visiteur)
     {
@@ -24,7 +24,8 @@ public static class Program
 
     public static void Main()
     {
-        AffichageConsole.Afficher(Parc, Map, GestionVisiteurs);
+        Map.chargerCarte();
+        /*AffichageConsole.Afficher(Parc, Map, GestionVisiteurs);
 
         var visiteur1 = new Visiteur("Nom 1");
         TestEntrerVisiteur(visiteur1);
@@ -45,8 +46,8 @@ public static class Program
         TestSortirVisiteur(visiteur4);
         TestSortirVisiteur(visiteur2);
         TestSortirVisiteur(visiteur1);
-        AffichageConsole.AfficherHistoriqueVisiteur(visiteur1);
+        //AffichageConsole.AfficherHistoriqueVisiteur(visiteur1);
         Parc parc = new Parc();
-        parc.RecupererAttraction("T0002");
+        parc.RecupererAttraction("T0002");*/
     }
 }

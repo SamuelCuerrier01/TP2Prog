@@ -14,3 +14,19 @@ C:\Users\samue\OneDrive - CEGEP SAINT-JEAN-SUR-RICHELIEU\Bureau\école\3-SESSION
 C:\Users\samue\OneDrive - CEGEP SAINT-JEAN-SUR-RICHELIEU\Bureau\école\3-SESSION\Structure de Données\TP2Prog\TP2Prog\obj\Debug\net9.0\TP2Prog.genruntimeconfig.cache
 C:\Users\samue\OneDrive - CEGEP SAINT-JEAN-SUR-RICHELIEU\Bureau\école\3-SESSION\Structure de Données\TP2Prog\TP2Prog\obj\Debug\net9.0\ref\TP2Prog.dll
 C:\Users\samue\OneDrive - CEGEP SAINT-JEAN-SUR-RICHELIEU\Bureau\école\3-SESSION\Structure de Données\TP2Prog\TP2Prog\bin\Debug\net9.0\Fichiers\attractions.txt
+C:\Users\samue\RiderProjects\TP2Prog\obj\Debug\net9.0\TP2Prog.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samue\RiderProjects\TP2Prog\obj\Debug\net9.0\TP2Prog.AssemblyInfoInputs.cache
+C:\Users\samue\RiderProjects\TP2Prog\obj\Debug\net9.0\TP2Prog.AssemblyInfo.cs
+C:\Users\samue\RiderProjects\TP2Prog\obj\Debug\net9.0\TP2Prog.csproj.CoreCompileInputs.cache
+C:\Users\samue\RiderProjects\TP2Prog\obj\Debug\net9.0\TP2Prog.sourcelink.json
+C:\Users\samue\RiderProjects\TP2Prog\obj\Debug\net9.0\TP2Prog.dll
+C:\Users\samue\RiderProjects\TP2Prog\obj\Debug\net9.0\refint\TP2Prog.dll
+C:\Users\samue\RiderProjects\TP2Prog\obj\Debug\net9.0\TP2Prog.pdb
+C:\Users\samue\RiderProjects\TP2Prog\bin\Debug\net9.0\Fichiers\attractions.txt
+C:\Users\samue\RiderProjects\TP2Prog\bin\Debug\net9.0\TP2Prog.exe
+C:\Users\samue\RiderProjects\TP2Prog\bin\Debug\net9.0\TP2Prog.deps.json
+C:\Users\samue\RiderProjects\TP2Prog\bin\Debug\net9.0\TP2Prog.runtimeconfig.json
+C:\Users\samue\RiderProjects\TP2Prog\bin\Debug\net9.0\TP2Prog.dll
+C:\Users\samue\RiderProjects\TP2Prog\bin\Debug\net9.0\TP2Prog.pdb
+C:\Users\samue\RiderProjects\TP2Prog\obj\Debug\net9.0\TP2Prog.genruntimeconfig.cache
+C:\Users\samue\RiderProjects\TP2Prog\obj\Debug\net9.0\ref\TP2Prog.dll
