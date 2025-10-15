@@ -45,7 +45,7 @@ public static class Program
         TestSortirVisiteur(visiteur4);
         TestSortirVisiteur(visiteur2);
         TestSortirVisiteur(visiteur1);
-        //AffichageConsole.AfficherHistoriqueVisiteur(visiteur1);
+        AffichageConsole.AfficherHistoriqueVisiteur(visiteur1);
         Parc parc = new Parc();
         parc.RecupererAttraction("T0002");
 

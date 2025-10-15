@@ -41,6 +41,7 @@ public class AffichageConsole
         int nbToilette = 1;
         int nbMagasin = 1;
         int nbRestaurant = 1;
+        Console.WriteLine($"\n{gestionVisiteurs.getListeVisiteurs.Count} visiteur(s) présent(s) dans le parc.\n");
         foreach (var attr in parc.getAttractions)
         {
             int visiteurs = gestionVisiteurs.getNbVisiteursParAttraction(attr.GetId);
@@ -75,14 +76,18 @@ public class AffichageConsole
             }
             Console.Write("0");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write($"   {attr.GetId}   {nomAttraction} ({attr.GetTypeAttraction})   {visiteurs}/{attr.GetCapacite}");
+            Console.Write($"   {attr.GetId}{nomAttraction, +15} ({attr.GetTypeAttraction}){visiteurs, +10}/{attr.GetCapacite}");
             Console.WriteLine();
         }
     }
 
     public static void AfficherHistoriqueVisiteur(Visiteur visiteur)
     {
-
+        Console.WriteLine($"\n### {visiteur.getNom} ###");
+        foreach (var action in visiteur.GetListeActions())
+        {
+            Console.WriteLine($"- {action}");
+        }
     }
 
     private static void changerCouleur(GestionVisiteurs gestionVisiteurs, Attraction attr)

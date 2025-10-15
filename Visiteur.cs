@@ -13,6 +13,8 @@ public class Visiteur
         this._nom = nom;
     }
 
+    public string getNom => _nom;
+
     public LinkedList<string> GetListeActions()
     {
         return _listeActions;

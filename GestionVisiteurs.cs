@@ -16,6 +16,7 @@ public class GestionVisiteurs
         }
     }
 
+    public LinkedList<Visiteur>  getListeVisiteurs => _listeVisiteurs;
     public int getNbVisiteursParAttraction(string id)
     {
         return _listeNbVisiteursParAttraction[id];
