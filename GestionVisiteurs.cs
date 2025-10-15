@@ -12,7 +12,7 @@ public class GestionVisiteurs
         _parc = parc;
         foreach (var attraction in _parc.getAttractions)
         {
-            _listeNbVisiteursParAttraction.Add(attraction.GetId, 0);
+            _listeNbVisiteursParAttraction.Add(attraction._id, 0);
         }
     }
 

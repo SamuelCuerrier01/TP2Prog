@@ -2,11 +2,10 @@
 
 public class Parc
 {
-    private List<Attraction> _listeAttraction;
+    private List<Attraction> _listeAttraction { get; } = [];
 
     public Parc()
     {
-        _listeAttraction = new List<Attraction>();
         File.ReadAllText("Fichiers/attractions.txt");
         foreach (var line in File.ReadAllLines("Fichiers/attractions.txt"))
         {
@@ -18,31 +17,7 @@ public class Parc
         }
     }
 
-    public Attraction RecupererAttraction(string id)
-    {
-        foreach (var attraction in _listeAttraction)
-        {
-            if (attraction.GetId == id)
-            {
-                return attraction;
-            }
-        }
-        return null;
-    }
-
-    public int getNbAttractionParType(TypeAttraction type)
-    {
-        int compteur = 0;
-        foreach (var attraction in _listeAttraction)
-        {
-            if (attraction.GetTypeAttraction == type)
-            {
-                compteur++;
-            }
-        }
-
-        return compteur;
-    }
-
+    public Attraction RecupererAttraction(string id) =>
+        _listeAttraction.First(a => a._id == id);
     public List<Attraction> getAttractions => _listeAttraction;
 }

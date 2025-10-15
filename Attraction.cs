@@ -2,23 +2,16 @@
 
 public class Attraction
 {
-    private string _id;
-    private string _nom;
-    private int _capacite;
-    private TypeAttraction _typeAttraction;
+    public string _id { get; }
+    public string _nom { get; }
+    public int _capacite { get; }
+    public TypeAttraction _typeAttraction { get; }
 
     public Attraction(string id, TypeAttraction typeAttraction, string nom, int capacite)
     {
-        this._id = id;
-        this._nom = nom;
-        this._capacite = capacite;
-        this._typeAttraction = typeAttraction;
+        _id = id;
+        _nom = nom;
+        _capacite = capacite;
+        _typeAttraction = typeAttraction;
     }
-
-    public string GetId => _id;
-
-    public string GetNom => _nom;
-
-    public int GetCapacite => _capacite;
-    public TypeAttraction GetTypeAttraction => _typeAttraction;
 }

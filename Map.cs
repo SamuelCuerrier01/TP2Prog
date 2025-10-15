@@ -2,51 +2,43 @@
 
 public class Map
 {
-    private Parc _parc;
-    private List<string[]> attractionsLocation;
-    private int largeur;
-    private int hauteur;
+    public readonly List<string[]> _attractionsLocation;
+    public int _largeur {get ; private set;}
+    public int _hauteur {get ; private set;}
 
     public Map(Parc parc)
     {
-        _parc = parc;
-        attractionsLocation = new List<string[]>();
-        recupererInfos();
+        _attractionsLocation = new List<string[]>();
+        RecupererInfos();
     }
 
-    public List<string[]> getAttractionsLocation => attractionsLocation;
-    public int getLargeur => largeur;
-    public int getHauteur => hauteur;
+    public List<string[]> GetAttractionsLocation => _attractionsLocation;
 
-    public void recupererInfos()
+    private void RecupererInfos()
     {
-        var lignes = File.ReadAllLines("../../../Fichiers/map.txt");
+        string[] lignes = File.ReadAllLines("../../../Fichiers/map.txt");
         int index = 0;
 
-        foreach (var ligne in lignes)
+        foreach (string ligne in lignes)
         {
             if (index == 0)
             {
                 string[] dimensions =ligne.Split(";");
-                hauteur = int.Parse(dimensions[0]);
-                largeur = int.Parse(dimensions[1]);
+                _hauteur = int.Parse(dimensions[0]);
+                _largeur = int.Parse(dimensions[1]);
             }
             string[] infosAttraction = ligne.Split("   ");
             int index2 = 0;
-            foreach (var attraction in infosAttraction)
+            foreach (string attraction in infosAttraction)
             {
                 if (!attraction.Contains('-') && !attraction.Contains(';'))
                 {
-                    attractionsLocation.Add(new string[] {attraction, (index - 1).ToString(), index2.ToString()});
+                    _attractionsLocation.Add(new string[] {attraction, (index - 1).ToString(), index2.ToString()});
                 }
                 index2++;
             }
             index++;
 
         }
-    }
-
-    public void chargerCarte()
-    {
     }
 }

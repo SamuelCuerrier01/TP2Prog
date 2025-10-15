@@ -5,20 +5,20 @@ public class AffichageConsole
     //Trouver une facon de réduire la Notation Grand O de la méthode afficher pcq j'ai abuser
     public static void Afficher(Parc parc, Map map, GestionVisiteurs gestionVisiteurs)
     {
-        for (int i = 0; i < map.getHauteur; i++)
+        for (int i = 0; i < map._hauteur; i++)
         {
-            for (int j = 0; j < map.getLargeur; j++)
+            for (int j = 0; j < map._largeur; j++)
             {
                 bool trouve = false;
-                foreach (var attraction in map.getAttractionsLocation)
+                foreach (var attraction in map.GetAttractionsLocation)
                 {
                     if (int.Parse(attraction[1]) == i && int.Parse(attraction[2]) == j)
                     {
                         foreach (var attr in parc.getAttractions)
                         {
-                            if (attr.GetId == attraction[0])
+                            if (attr._id == attraction[0])
                             {
-                                changerCouleur(gestionVisiteurs, attr);
+                                ChangerCouleur(gestionVisiteurs, attr);
                                 Console.Write(attraction[0] + "   ");
                                 Console.ForegroundColor = ConsoleColor.White;
                             }
@@ -36,47 +36,14 @@ public class AffichageConsole
             }
             Console.WriteLine();
         }
-
-        int nbAttraction = 1;
-        int nbToilette = 1;
-        int nbMagasin = 1;
-        int nbRestaurant = 1;
         Console.WriteLine($"\n{gestionVisiteurs.getListeVisiteurs.Count} visiteur(s) présent(s) dans le parc.\n");
         foreach (var attr in parc.getAttractions)
         {
-            int visiteurs = gestionVisiteurs.getNbVisiteursParAttraction(attr.GetId);
-            changerCouleur(gestionVisiteurs, attr);
-            string nomAttraction = "";
-            switch (attr.GetTypeAttraction)
-            {
-                case TypeAttraction.S:
-                    nomAttraction = $"Manège {nbAttraction}";
-                    nbAttraction++;
-                    break;
-                case TypeAttraction.I:
-                    nomAttraction = $"Manège {nbAttraction}";
-                    nbAttraction++;
-                    break;
-                case TypeAttraction.F:
-                    nomAttraction = $"Manège {nbAttraction}";
-                    nbAttraction++;
-                    break;
-                case TypeAttraction.T:
-                    nomAttraction = $"Manège {nbToilette}";
-                    nbToilette++;
-                    break;
-                case TypeAttraction.M:
-                    nomAttraction = $"Magasin {nbMagasin}";
-                    nbMagasin++;
-                    break;
-                case TypeAttraction.R:
-                    nomAttraction = $"Restaurant {nbRestaurant}";
-                    nbRestaurant++;
-                    break;
-            }
+            int visiteurs = gestionVisiteurs.getNbVisiteursParAttraction(attr._id);
+            ChangerCouleur(gestionVisiteurs, attr);
             Console.Write("0");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write($"   {attr.GetId}{nomAttraction, +15} ({attr.GetTypeAttraction}){visiteurs, +10}/{attr.GetCapacite}");
+            Console.Write($"   {attr._id}{attr._nom, +15} ({attr._typeAttraction}){visiteurs, +10}/{attr._capacite}");
             Console.WriteLine();
         }
     }
@@ -90,13 +57,13 @@ public class AffichageConsole
         }
     }
 
-    private static void changerCouleur(GestionVisiteurs gestionVisiteurs, Attraction attr)
+    private static void ChangerCouleur(GestionVisiteurs gestionVisiteurs, Attraction attr)
     {
-        int visiteurs = gestionVisiteurs.getNbVisiteursParAttraction(attr.GetId);
-        if (visiteurs / attr.GetCapacite == 1)
+        int visiteurs = gestionVisiteurs.getNbVisiteursParAttraction(attr._id);
+        if (visiteurs / attr._capacite == 1)
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
-        } else if (double.Parse(visiteurs.ToString()) / attr.GetCapacite >= 0.75)
+        } else if (double.Parse(visiteurs.ToString()) / attr._capacite >= 0.75)
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
         }
