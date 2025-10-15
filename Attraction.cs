@@ -17,7 +17,8 @@ public class Attraction
 
     public string GetId => _id;
 
-    public string GetNom() => _nom;
+    public string GetNom => _nom;
 
-    public int GetCapacite() => _capacite;
+    public int GetCapacite => _capacite;
+    public TypeAttraction GetTypeAttraction => _typeAttraction;
 }

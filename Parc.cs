@@ -30,5 +30,19 @@ public class Parc
         return null;
     }
 
+    public int getNbAttractionParType(TypeAttraction type)
+    {
+        int compteur = 0;
+        foreach (var attraction in _listeAttraction)
+        {
+            if (attraction.GetTypeAttraction == type)
+            {
+                compteur++;
+            }
+        }
+
+        return compteur;
+    }
+
     public List<Attraction> getAttractions => _listeAttraction;
 }
