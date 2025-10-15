@@ -14,6 +14,10 @@ public class Map
         recupererInfos();
     }
 
+    public List<string[]> getAttractionsLocation => attractionsLocation;
+    public int getLargeur => largeur;
+    public int getHauteur => hauteur;
+
     public void recupererInfos()
     {
         var lignes = File.ReadAllLines("../../../Fichiers/map.txt");
@@ -44,28 +48,5 @@ public class Map
 
     public void chargerCarte()
     {
-        for (int i = 0; i < hauteur; i++)
-        {
-            for (int j = 0; j < largeur; j++)
-            {
-                bool trouve = false;
-                foreach (var attraction in attractionsLocation)
-                {
-
-                    if (int.Parse(attraction[1]) == i && int.Parse(attraction[2]) == j)
-                    {
-                        Console.Write(attraction[0] + "   ");
-                        trouve = true;
-                        break;
-                    }
-                }
-
-                if (!trouve)
-                {
-                    Console.Write("-----   ");
-                }
-            }
-            Console.WriteLine();
-        }
     }
 }

@@ -22,7 +22,7 @@ public class Parc
     {
         foreach (var attraction in _listeAttraction)
         {
-            if (attraction.GetId() == id)
+            if (attraction.GetId == id)
             {
                 return attraction;
             }
@@ -30,11 +30,5 @@ public class Parc
         return null;
     }
 
-    public void getAttractions()
-    {
-        foreach (var attraction in _listeAttraction)
-        {
-            Console.WriteLine($"{attraction.GetId()} {attraction.GetCapacite()} {attraction.GetNom()}");
-        }
-    }
+    public List<Attraction> getAttractions => _listeAttraction;
 }

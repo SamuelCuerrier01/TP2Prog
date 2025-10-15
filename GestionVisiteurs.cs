@@ -10,6 +10,15 @@ public class GestionVisiteurs
     public GestionVisiteurs(Parc parc)
     {
         _parc = parc;
+        foreach (var attraction in _parc.getAttractions)
+        {
+            _listeNbVisiteursParAttraction.Add(attraction.GetId, 0);
+        }
+    }
+
+    public int getNbVisiteursParAttraction(string id)
+    {
+        return _listeNbVisiteursParAttraction[id];
     }
 
     public void EntrerVisiteurDansFilAttente(string id, Visiteur visiteur)

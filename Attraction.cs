@@ -15,18 +15,9 @@ public class Attraction
         this._typeAttraction = typeAttraction;
     }
 
-    public string GetId()
-    {
-        return _id;
-    }
+    public string GetId => _id;
 
-    public string GetNom()
-    {
-        return _nom;
-    }
+    public string GetNom() => _nom;
 
-    public int GetCapacite()
-    {
-        return _capacite;
-    }
+    public int GetCapacite() => _capacite;
 }
