@@ -1,27 +1,43 @@
-﻿namespace TP2Prog;
+﻿// <copyright file="AffichageConsole.cs" company="CSTJEAN">
+// Samuel Cuerrier, Nicolas Savaria
+// </copyright>
+namespace TP2Prog;
 
+/// <summary>
+/// Classe AfficherConsole qui comporte les methodes qui gèrent l'affichage de la map et l'historique des visiteurs.
+/// </summary>
 public class AffichageConsole
 {
-    //Trouver une facon de réduire la Notation Grand O de la méthode afficher pcq j'ai abuser
-    public static void Afficher(Parc parc, Map map, GestionVisiteurs gestionVisiteurs)
+    /// <summary>
+    /// Methode qui affiche la map et les attractions de celle-ci.
+    /// </summary>
+    /// <param name="parc">Le parc.</param>
+    /// <param name="map">La map du parc.</param>
+    /// <param name="gestionVisiteurs">La gestion des visiteurs.</param>
+    public static void Afficher(Parc parc, Map map, GestionVisiteurs gestionVisiteurs) // Notation O(n3)
     {
-        for (int i = 0; i < map._hauteur; i++)
+        var attractionID = new Dictionary<string, Attraction>();
+
+        foreach (var attraction in parc.GetAttractions)
         {
-            for (int j = 0; j < map._largeur; j++)
+            attractionID[attraction.Id] = attraction;
+        }
+
+        for (int i = 0; i < map.Hauteur; i++)
+        {
+            for (int j = 0; j < map.Largeur; j++)
             {
                 bool trouve = false;
                 foreach (var attraction in map.GetAttractionsLocation)
                 {
                     if (int.Parse(attraction[1]) == i && int.Parse(attraction[2]) == j)
                     {
-                        foreach (var attr in parc.getAttractions)
+                        if (attractionID.ContainsKey(attraction[0]))
                         {
-                            if (attr._id == attraction[0])
-                            {
-                                ChangerCouleur(gestionVisiteurs, attr);
-                                Console.Write(attraction[0] + "   ");
-                                Console.ForegroundColor = ConsoleColor.White;
-                            }
+                            var attract = attractionID[attraction[0]];
+                            ChangerCouleur(gestionVisiteurs, attract);
+                            Console.Write(attraction[0] + "   ");
+                            Console.ForegroundColor = ConsoleColor.White;
                         }
 
                         trouve = true;
@@ -34,23 +50,29 @@ public class AffichageConsole
                     Console.Write("-----   ");
                 }
             }
+
             Console.WriteLine();
         }
-        Console.WriteLine($"\n{gestionVisiteurs.getListeVisiteurs.Count} visiteur(s) présent(s) dans le parc.\n");
-        foreach (var attr in parc.getAttractions)
+
+        Console.WriteLine($"\n{gestionVisiteurs.GetListeVisiteurs.Count} visiteur(s) présent(s) dans le parc.\n");
+        foreach (var attr in parc.GetAttractions)
         {
-            int visiteurs = gestionVisiteurs.getNbVisiteursParAttraction(attr._id);
+            int visiteurs = gestionVisiteurs.GetNbVisiteursParAttraction(attr.Id);
             ChangerCouleur(gestionVisiteurs, attr);
             Console.Write("0");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write($"   {attr._id}{attr._nom, +15} ({attr._typeAttraction}){visiteurs, +10}/{attr._capacite}");
+            Console.Write($"   {attr.Id}{attr.Nom,+15} ({attr.TypeAttraction}){visiteurs,+10}/{attr.Capacite}");
             Console.WriteLine();
         }
     }
 
+    /// <summary>
+    /// Methode qui affiche l'historique d'un visiteur.
+    /// </summary>
+    /// <param name="visiteur">Le visiteur qu'on cherche à voir l'historique.</param>
     public static void AfficherHistoriqueVisiteur(Visiteur visiteur)
     {
-        Console.WriteLine($"\n### {visiteur.getNom} ###");
+        Console.WriteLine($"\n### {visiteur.GetNom} ###");
         foreach (var action in visiteur.GetListeActions())
         {
             Console.WriteLine($"- {action}");
@@ -59,11 +81,12 @@ public class AffichageConsole
 
     private static void ChangerCouleur(GestionVisiteurs gestionVisiteurs, Attraction attr)
     {
-        int visiteurs = gestionVisiteurs.getNbVisiteursParAttraction(attr._id);
-        if (visiteurs / attr._capacite == 1)
+        int visiteurs = gestionVisiteurs.GetNbVisiteursParAttraction(attr.Id);
+        if (visiteurs / attr.Capacite == 1)
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
-        } else if (double.Parse(visiteurs.ToString()) / attr._capacite >= 0.75)
+        }
+        else if (double.Parse(visiteurs.ToString()) / attr.Capacite >= 0.75)
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
         }
